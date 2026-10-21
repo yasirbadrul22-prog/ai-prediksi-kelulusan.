@@ -24,3 +24,14 @@ def prediksi(data: DataSiswa):
         "nilai": data.nilai,
         "prediksi": hasil
     }
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def beranda():
+    return {"status": "API aktif"}
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
